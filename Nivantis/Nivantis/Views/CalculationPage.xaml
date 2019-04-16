@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Behaviors="clr-namespace:Nivantis.Behaviors"
+             x:Class="Nivantis.Views.CalculationPage">    
+    <ContentPage.Resources>
+        <StyleSheet Source="/Assets/Css/CalculationPage.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Entry Grid.Row="0" Grid.ColumnSpan="2" x:Name="GrossPrice" 
+                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                       HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
+                       HorizontalTextAlignment="Center" FontSize="Large"
+                       WidthRequest="200"
+                       Placeholder="Prix d'achat brut">
+                    <Entry.Behaviors>
+                        <Behaviors:DecimalValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="NetPrice"  
+                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                       HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
+                       HorizontalTextAlignment="Center" FontSize="Large"
+                       WidthRequest="200"
+                       Placeholder="Prix d'achat net">
+                    <Entry.Behaviors>
+                        <Behaviors:DecimalValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Grid.Row="4" Grid.ColumnSpan="2" x:Name="Multiplier" 
+                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                       HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
+                       HorizontalTextAlignment="Center" FontSize="Large"
+                       WidthRequest="200"
+                       Placeholder="Coeff.">
+                    <Entry.Behaviors>
+                        <Behaviors:DecimalValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Button Grid.Row="6" Grid.ColumnSpan="2" Text="Calculer" 
+                        Clicked="CalculationButton_Clicked" 
+                        HorizontalOptions="FillAndExpand"/>                
+            </Grid>           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
