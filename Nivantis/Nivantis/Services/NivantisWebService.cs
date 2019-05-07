@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Nivantis.Internal;
 using Nivantis.Models;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,13 @@ namespace Nivantis.Services
         async public Task<User> Connect(string login, string password)
         {
             var response = await _httpClient.GetStringAsync($"connexion.php?login={login}&password={password}");
-            var user = JsonConvert.DeserializeObject<User>(response);
 
-            return user;
+            if (!string.IsNullOrEmpty(response))
+            {
+                var user = JsonConvert.DeserializeObject<User>(response);
+                return user;
+            }
+            return null;                
         }
-
     }
 }

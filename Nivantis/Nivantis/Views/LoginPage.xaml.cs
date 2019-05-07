@@ -2,10 +2,7 @@
 using Nivantis.Services;
 using Plugin.Toast;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,9 +27,7 @@ namespace Nivantis.Views
 
             if (!string.IsNullOrWhiteSpace(login) && !string.IsNullOrWhiteSpace(password))
             {
-                ActIndicator.IsEnabled = true;
-                ActIndicator.IsRunning = true;
-                ActIndicator.IsVisible = true;
+                SetActivityIndicator(true);
 
                 var user = await nivantisWebService.Connect(login, password);
 
@@ -43,21 +38,24 @@ namespace Nivantis.Views
                 }
                 else
                 {
+                    SetActivityIndicator(false);
                     CrossToastPopUp.Current.ShowToastError("Login ou mot de passe invalide !");
                 }
-                
-
-                
             }
         }
 
         protected override void OnDisappearing()
         {
-            base.OnDisappearing();  
+            base.OnDisappearing();
 
-            ActIndicator.IsEnabled = false;
-            ActIndicator.IsRunning = false;
-            ActIndicator.IsVisible = false;
+            SetActivityIndicator(false);
+        }
+
+        private void SetActivityIndicator(bool state)
+        {
+            ActIndicator.IsEnabled = state;
+            ActIndicator.IsRunning = state;
+            ActIndicator.IsVisible = state;
         }
     }
 }
