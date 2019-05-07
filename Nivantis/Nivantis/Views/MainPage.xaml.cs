@@ -11,6 +11,7 @@ namespace Nivantis.Views
         public MainPage()
         {
             InitializeComponent();
+            Navigation.PopModalAsync();
         }
     }
 }

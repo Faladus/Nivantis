@@ -2,19 +2,18 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Nivantis.Views;
+using Nivantis.Internal;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Nivantis
 {
     public partial class App : Application
     {
-
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
-
-            MainPage = new LoginPage();
+            MainPage = new LoginPage();            
         }
 
         protected override void OnStart()

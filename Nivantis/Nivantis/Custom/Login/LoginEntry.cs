@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Nivantis.Custom
+namespace Nivantis.Custom.Login
 {
     public class LoginEntry : Entry
     {
