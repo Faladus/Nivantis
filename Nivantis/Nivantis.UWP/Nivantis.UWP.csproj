@@ -159,7 +159,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nivantis\Nivantis\Nivantis.csproj">
+    <ProjectReference Include="..\Nivantis\Nivantis.csproj">
       <Project>{57513a98-22e2-4b27-ae71-a0c9365226a5}</Project>
       <Name>Nivantis</Name>
     </ProjectReference>

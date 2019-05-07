@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nivantis.iOS", "Nivantis\Ni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nivantis", "Nivantis\Nivantis\Nivantis.csproj", "{57513A98-22E2-4B27-AE71-A0C9365226A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nivantis.UWP", "Nivantis.UWP\Nivantis.UWP.csproj", "{A3C717A0-5CB7-45A2-836C-E912252E35FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nivantis.UWP", "Nivantis\Nivantis.UWP\Nivantis.UWP.csproj", "{A3C717A0-5CB7-45A2-836C-E912252E35FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
