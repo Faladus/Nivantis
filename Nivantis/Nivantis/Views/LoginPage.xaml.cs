@@ -1,9 +1,7 @@
-﻿using Nivantis.Internal;
+﻿using Nivantis.Controller;
+using Nivantis.Internal;
 using Nivantis.Services;
-using Plugin.Toast;
 using System;
-
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,7 +37,7 @@ namespace Nivantis.Views
                 else
                 {
                     SetActivityIndicator(false);
-                    CrossToastPopUp.Current.ShowToastError("Login ou mot de passe invalide !");
+                    DependencyService.Get<IToast>().Show("Login ou mot de passe invalide !");
                 }
             }
         }
