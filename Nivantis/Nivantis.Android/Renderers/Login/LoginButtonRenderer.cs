@@ -31,7 +31,7 @@ namespace Nivantis.Droid.Renderers
 
             if (Control != null)
             {
-                Control.SetBackgroundColor(Android.Graphics.Color.ParseColor("#42a5f5"));
+                Control.SetBackgroundColor(Android.Graphics.Color.ParseColor("#1976d2"));
             }
         }
     }

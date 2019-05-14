@@ -5,22 +5,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="Primary">#fbc02d</Color>
-            <Color x:Key="PrimaryLight">#fff263</Color>
-            <Color x:Key="PrimaryDark">#c49000</Color>
+            <Color x:Key="Primary">#1976d2</Color>
+            <Color x:Key="PrimaryLight">#63a4ff</Color>
+            <Color x:Key="PrimaryDark">#004ba0</Color>
 
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryDark}"/>
-                <Setter Property="BarTextColor" Value="Black" />
-            </Style>
-
-            <Style TargetType="TabbedPage">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryLight}"/>
-            </Style>
-
-            <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"></Setter>                
-            </Style>
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>                 
+                
         </ResourceDictionary>
     </Application.Resources>
 </Application>

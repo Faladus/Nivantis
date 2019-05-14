@@ -17,10 +17,15 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
+                
                 <StackLayout Grid.Row="1" Grid.Column="1">
-                    <custom:LoginEntry x:Name="Login" Placeholder="Login"></custom:LoginEntry>
-                    <custom:LoginEntry x:Name="Password" Placeholder="Mot de passe" IsPassword="True" Margin="0, 0, 0, 40"></custom:LoginEntry>
-                    <custom:LoginButton Text="Connexion" Clicked="LoginButton_Clicked"></custom:LoginButton>
+
+                    <custom:LoginEntry x:Name="Login" Placeholder="Login" TextColor="White"></custom:LoginEntry>
+
+                    <custom:LoginEntry x:Name="Password" Placeholder="Mot de passe" TextColor="White"  IsPassword="True" Margin="0, 0, 0, 40"></custom:LoginEntry>
+                    
+                    <custom:LoginButton Text="Connexion" TextColor="White" Clicked="LoginButton_Clicked"></custom:LoginButton>
+                    
                     <ActivityIndicator x:Name="ActIndicator"  
                        IsRunning="False"  
                        IsEnabled="False"  
@@ -28,6 +33,7 @@
                        Color="Blue"  
                        BackgroundColor="Transparent"/>
                 </StackLayout>
+                
             </Grid>
         </StackLayout>
     </ContentPage.Content>

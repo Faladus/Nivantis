@@ -5,7 +5,7 @@
             x:Class="Nivantis.Views.MainPage">   
     
     <TabbedPage.Children>
-        <NavigationPage Title="Browse" BarBackgroundColor="#80d6ff">
+        <NavigationPage Title="Browse">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
