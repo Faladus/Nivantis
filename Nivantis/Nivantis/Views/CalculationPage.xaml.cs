@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Nivantis.Controller;
+using Nivantis.Exceptions;
 
 namespace Nivantis.Views
 {
@@ -24,21 +25,36 @@ namespace Nivantis.Views
 
         async void CalculationButton_Clicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(GrossPrice.Text) && !string.IsNullOrWhiteSpace(NetPrice.Text) && !string.IsNullOrWhiteSpace(Multiplier.Text))
-            {
-                Calculation calculation = new Calculation()
-                {
-                    GrossPurchasePrice = Convert.ToDecimal(GrossPrice.Text),
-                    NetPurchasePrice = Convert.ToDecimal(NetPrice.Text),
-                    Multiplier = Convert.ToDecimal(Multiplier.Text)
-                };
-
-                await Navigation.PushAsync(new CalculationDetailPage(new CalculationViewModel(calculation)));
-            }
-            else
+            if (string.IsNullOrWhiteSpace(GrossPrice.Text) || string.IsNullOrWhiteSpace(Discount.Text) || string.IsNullOrWhiteSpace(Multiplier.Text))
             {
                 DependencyService.Get<IToast>().Show("Valeur(s) manquante...");
+                return;
             }
+
+            Calculation calculation = new Calculation()
+            {
+                GrossPurchasePrice = Convert.ToDecimal(GrossPrice.Text),
+                Discount = Convert.ToDecimal(Discount.Text),
+                Multiplier = Convert.ToDecimal(Multiplier.Text)
+            };
+
+            if (calculation.GrossPurchasePrice == 0)
+            {
+                DependencyService.Get<IToast>().Show(CalculationExceptions.AchatBrutEqualZero);
+                return;
+            }
+            if (calculation.Discount < 0)
+            {
+                DependencyService.Get<IToast>().Show(CalculationExceptions.DiscountUnderZero);
+                return;
+            }
+            if (calculation.Multiplier < 0)
+            {
+                DependencyService.Get<IToast>().Show(CalculationExceptions.MultiplierUnderZero);
+                return;
+            }
+
+            await Navigation.PushAsync(new CalculationDetailPage(new CalculationViewModel(calculation)));
         }       
     }
 }

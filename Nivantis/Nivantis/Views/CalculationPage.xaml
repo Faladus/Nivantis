@@ -23,19 +23,19 @@
                        StyleClass="calculation_entry" x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
-                       WidthRequest="200"
+                       WidthRequest="300"
                        Placeholder="Prix d'achat brut">
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
                     </Entry.Behaviors>
                 </Entry>
 
-                <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="NetPrice"  
+                <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="Discount"  
                        StyleClass="calculation_entry" x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
-                       WidthRequest="200"
-                       Placeholder="Prix d'achat net">
+                       WidthRequest="300"
+                       Placeholder="Taux de réduction">
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
                     </Entry.Behaviors>
@@ -45,7 +45,7 @@
                        StyleClass="calculation_entry" x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
-                       WidthRequest="200"
+                       WidthRequest="300"
                        Placeholder="Coeff.">
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
