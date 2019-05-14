@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Plugin.Toast;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Nivantis.Controller;
 
 namespace Nivantis.Views
 {
@@ -38,8 +37,8 @@ namespace Nivantis.Views
             }
             else
             {
-                CrossToastPopUp.Current.ShowToastError("Valeurs manquantes ...");
-            }            
+                DependencyService.Get<IToast>().Show("Valeur(s) manquante...");
+            }
         }       
     }
 }
