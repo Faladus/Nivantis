@@ -2,12 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nivantis.Views.LoginPage"
-             xmlns:custom="clr-namespace:Nivantis.Custom">
+             xmlns:custom="clr-namespace:Nivantis.Custom.Login"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <custom:LoginEntry Text="Test"></custom:LoginEntry>
-                    
-            
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <custom:LoginEntry x:Name="Login" Placeholder="Login"></custom:LoginEntry>
+                    <custom:LoginEntry x:Name="Password" Placeholder="Mot de passe" IsPassword="True" Margin="0, 0, 0, 40"></custom:LoginEntry>
+                    <custom:LoginButton Text="Connexion" Clicked="LoginButton_Clicked"></custom:LoginButton>
+                    <ActivityIndicator x:Name="ActIndicator"  
+                       IsRunning="False"  
+                       IsEnabled="False"  
+                       IsVisible="False"  
+                       Color="Blue"  
+                       BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

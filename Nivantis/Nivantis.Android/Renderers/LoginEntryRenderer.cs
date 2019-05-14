@@ -11,17 +11,17 @@ using Android.Views;
 using Android.Widget;
 
 using Nivantis.Droid.Renderers;
-using Nivantis.Custom;
+using Nivantis.Custom.Login;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(LoginEntry), typeof(LoginRenderer))]
+[assembly: ExportRenderer(typeof(LoginEntry), typeof(LoginEntryRenderer))]
 namespace Nivantis.Droid.Renderers
 {
-    public class LoginRenderer : EntryRenderer
+    public class LoginEntryRenderer : EntryRenderer
     {
-        public LoginRenderer(Context context) : base(context)
+        public LoginEntryRenderer(Context context) : base(context)
         {
         }
 
@@ -31,7 +31,7 @@ namespace Nivantis.Droid.Renderers
 
             if (Control != null)
             {
-                Control.SetBackgroundColor(global::Android.Graphics.Color.LightGreen);
+                Control.SetBackgroundColor(Android.Graphics.Color.ParseColor("#80d6ff"));                
             }
         }
     }
