@@ -28,7 +28,7 @@
                     </Entry.Behaviors>
                 </custom:CalculationEntry>
 
-                <custom:CalculationEntry Grid.Row="2" Grid.ColumnSpan="2" x:Name="NetPrice"  
+                <custom:CalculationEntry Grid.Row="2" Grid.ColumnSpan="2" x:Name="Discount"  
                        x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"

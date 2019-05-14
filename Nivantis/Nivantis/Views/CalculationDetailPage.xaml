@@ -18,7 +18,7 @@
                 <StackLayout Grid.Row="0" Grid.Column="0">
                     <Label Text="Taux de remise" TextColor="{StaticResource Primary}" FontSize="Large" HorizontalTextAlignment="Center"/>
                     <Label HorizontalTextAlignment="Center"
-                            Text="{ Binding Calculation.Discount, StringFormat=' {0:F2} %' }"
+                            Text="{ Binding Calculation.Discount, StringFormat=' {0:P}' }"
                             TextColor="Black"
                             FontSize="Large"/>
                 </StackLayout>

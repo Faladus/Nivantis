@@ -27,7 +27,7 @@ namespace Nivantis.Views
         {
             if (string.IsNullOrWhiteSpace(GrossPrice.Text) || string.IsNullOrWhiteSpace(Discount.Text) || string.IsNullOrWhiteSpace(Multiplier.Text))
             {
-                DependencyService.Get<IToast>().Show("Valeur(s) manquante...");
+                ShowToast("Valeur(s) manquante...");
                 return;
             }
 
@@ -40,21 +40,26 @@ namespace Nivantis.Views
 
             if (calculation.GrossPurchasePrice == 0)
             {
-                DependencyService.Get<IToast>().Show(CalculationExceptions.AchatBrutEqualZero);
+                ShowToast(CalculationExceptions.GrossPriceEqualZero);
                 return;
             }
             if (calculation.Discount < 0)
             {
-                DependencyService.Get<IToast>().Show(CalculationExceptions.DiscountUnderZero);
+                ShowToast(CalculationExceptions.DiscountUnderZero);
                 return;
             }
             if (calculation.Multiplier < 0)
             {
-                DependencyService.Get<IToast>().Show(CalculationExceptions.MultiplierUnderZero);
+                ShowToast(CalculationExceptions.MultiplierUnderZero);
                 return;
             }
 
             await Navigation.PushAsync(new CalculationDetailPage(new CalculationViewModel(calculation)));
-        }       
+        }    
+        
+        private void ShowToast(string message)
+        {
+            DependencyService.Get<IToast>().Show(message);
+        }
     }
 }

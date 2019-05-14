@@ -6,7 +6,7 @@ namespace Nivantis.Exceptions
 {
     class CalculationExceptions
     {
-        public static string AchatBrutEqualZero = "Le prix d'achat brut ne peut être égal à 0";
+        public static string GrossPriceEqualZero = "Le prix d'achat brut ne peut être égal à 0";
 
         public static string DiscountUnderZero = "Le taux de réduction ne peut être inférieur à zero";
 
