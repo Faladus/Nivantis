@@ -2,10 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Behaviors="clr-namespace:Nivantis.Behaviors"
-             x:Class="Nivantis.Views.CalculationPage">    
-    <ContentPage.Resources>
-        <StyleSheet Source="/Assets/Css/CalculationPage.css" />
-    </ContentPage.Resources>
+             xmlns:custom="clr-namespace:Nivantis.Custom.Calculation"
+             x:Class="Nivantis.Views.CalculationPage">        
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
             <Grid>
@@ -19,8 +17,8 @@
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Entry Grid.Row="0" Grid.ColumnSpan="2" x:Name="GrossPrice" 
-                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                <custom:CalculationEntry Grid.Row="0" Grid.ColumnSpan="2" x:Name="GrossPrice" 
+                       x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
                        WidthRequest="300"
@@ -28,10 +26,10 @@
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
                     </Entry.Behaviors>
-                </Entry>
+                </custom:CalculationEntry>
 
-                <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="Discount"  
-                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                <custom:CalculationEntry Grid.Row="2" Grid.ColumnSpan="2" x:Name="NetPrice"  
+                       x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
                        WidthRequest="300"
@@ -39,10 +37,10 @@
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
                     </Entry.Behaviors>
-                </Entry>
+                </custom:CalculationEntry>
 
-                <Entry Grid.Row="4" Grid.ColumnSpan="2" x:Name="Multiplier" 
-                       StyleClass="calculation_entry" x:DataType="x:Decimal" 
+                <custom:CalculationEntry Grid.Row="4" Grid.ColumnSpan="2" x:Name="Multiplier" 
+                       x:DataType="x:Decimal" 
                        HorizontalOptions="CenterAndExpand" Keyboard="Numeric" 
                        HorizontalTextAlignment="Center" FontSize="Large"
                        WidthRequest="300"
@@ -50,7 +48,7 @@
                     <Entry.Behaviors>
                         <Behaviors:DecimalValidationBehavior/>
                     </Entry.Behaviors>
-                </Entry>
+                </custom:CalculationEntry>
 
                 <Button Grid.Row="6" Grid.ColumnSpan="2" Text="Calculer" 
                         Clicked="CalculationButton_Clicked" 
