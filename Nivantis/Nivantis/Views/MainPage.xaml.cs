@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Nivantis.Internal;
+using Nivantis.Services;
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,6 +14,6 @@ namespace Nivantis.Views
         {
             InitializeComponent();
             Navigation.PopModalAsync();
-        }
+        }        
     }
 }

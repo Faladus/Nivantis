@@ -1,5 +1,5 @@
 ﻿using Nivantis.Models;
-using Nivantis.Models.Pharmacy;
+using Nivantis.Models.Form;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,6 +25,6 @@ namespace Nivantis.Internal
         }
 
         public User User { get; set; }
-        public List<Pharmacy> Pharmacies { get; set; }
+        public List<Form> Forms { get; set; }
     }
 }

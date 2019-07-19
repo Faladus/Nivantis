@@ -2,6 +2,7 @@
 using Nivantis.Internal;
 using Nivantis.Models;
 using Nivantis.Models.Pharmacy;
+using Nivantis.Models.Form;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -44,6 +45,18 @@ namespace Nivantis.Services
                 return pharmacies;
             }
             return null;
+        }
+
+        public async Task<List<Form>> GetForms(string key)
+        {
+            var response = await _httpClient.GetStringAsync($"getFormat.php?key={key}");
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                var forms = JsonConvert.DeserializeObject<List<Form>>(response);
+                return forms;
+            }
+            return null;            
         }
     }
 }

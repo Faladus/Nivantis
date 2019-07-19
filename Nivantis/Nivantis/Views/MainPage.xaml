@@ -17,9 +17,9 @@
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="About">            
+        <NavigationPage Title="Formulaires">            
             <x:Arguments>
-                <views:AboutPage />
+                <views:FormPage />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>
