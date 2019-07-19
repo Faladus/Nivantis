@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nivantis.Views.PharmacyDetailPage">
+    <ContentPage.Content>
+        <ScrollView>            
+            <StackLayout Orientation="Vertical">
+                <Label Text="{Binding Pharmacy.Name}" FontSize="Large"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Pharmacy.City}" FontSize="Small"/>
+                    <Label Text="{Binding Pharmacy.PostalCode}" FontSize="Small"/>
+                </StackLayout>
+                <Label Text="{Binding Pharmacy.Address}" FontSize="Small"/>
+                <Label Text="{Binding Pharmacy.Phone}" FontSize="Small"/>
+                <Label Text="{Binding Pharmacy.Website}" FontSize="Small"/>                
+            </StackLayout>
+        </ScrollView>       
+    </ContentPage.Content>
+</ContentPage>

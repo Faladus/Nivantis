@@ -11,7 +11,7 @@ namespace Nivantis.Services
 {
     public class NivantisWebService
     {
-        private readonly HttpClient _httpClient;
+        private static HttpClient _httpClient;
 
         public NivantisWebService()
         {
@@ -21,7 +21,7 @@ namespace Nivantis.Services
             };
         }
 
-        async public Task<User> Connect(string login, string password)
+        public async Task<User> Connect(string login, string password)
         {
             var response = await _httpClient.GetStringAsync($"connexion.php?login={login}&password={password}");
 
