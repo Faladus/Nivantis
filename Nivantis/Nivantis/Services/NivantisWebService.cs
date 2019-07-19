@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Nivantis.Internal;
 using Nivantis.Models;
+using Nivantis.Models.Pharmacy;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -31,6 +32,18 @@ namespace Nivantis.Services
                 return user;
             }
             return null;                
+        }
+
+        public async Task<List<Pharmacy>> GetPharmaciesByCity(string key, string city)
+        {
+            var response = await _httpClient.GetStringAsync($"pharmacie.php?key={key}&ville={city}");
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                var pharmacies = JsonConvert.DeserializeObject<List<Pharmacy>>(response);
+                return pharmacies;
+            }
+            return null;
         }
     }
 }

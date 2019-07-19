@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,13 @@ namespace Nivantis.Models.Pharmacy
 {
     public class TrainingCourse
     {
+        
+        [JsonProperty("id_formation")]
+        public int Id { get; set; }
+        [JsonProperty("libelle_formation")]
         public string Title { get; set; }
+        [JsonProperty("date_update")]
+        public DateTime UpdateDate { get; set; }
         public string Duration { get; set; }
         public string EmployeName { get; set; }
         public string EmployeFirstName { get; set; }

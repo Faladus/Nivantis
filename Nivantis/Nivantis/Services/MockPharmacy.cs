@@ -45,7 +45,7 @@ namespace Nivantis.Services
                         new Sale(90.63, new DateTime(2019, 01, 19)),
                         new Sale(36.21, new DateTime(2019, 01, 22)),
                         new Sale(710.65, new DateTime(2019, 01, 29)),
-                    }, AskedTrainingCourses = new List<TrainingCourse>()
+                    }, TrainingCourses = new List<TrainingCourse>()
                     {
                         new TrainingCourse("Gestion des stocks", "21h", "Delores", "Christian", 32, new DateTime(2019, 07, 26))
                     }},
@@ -71,7 +71,7 @@ namespace Nivantis.Services
                         new Sale(12.63, new DateTime(2019, 01, 17)),                        
                         new Sale(41.20, new DateTime(2019, 01, 27)),
                         new Sale(45.12, new DateTime(2019, 01, 30)),
-                    }, AskedTrainingCourses = new List<TrainingCourse>()
+                    }, TrainingCourses = new List<TrainingCourse>()
                     {
                         new TrainingCourse("Apprentissage du logiciel de gestion", "14h", "Gracio", "Arthue", 24, new DateTime(2019, 08, 29))
                     }},
