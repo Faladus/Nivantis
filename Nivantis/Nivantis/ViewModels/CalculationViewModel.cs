@@ -20,8 +20,8 @@ namespace Nivantis.ViewModels
         
         private void Calculate()
         {
-            Calculation.Discount = CalculationService.Discount(Calculation.NetPurchasePrice, Calculation.GrossPurchasePrice);
-            Calculation.NetSellingPrice = CalculationService.NetSellingPrice(Calculation.NetPurchasePrice, Calculation.Multiplier);
+            Calculation.CalculateNetPurchasePrice();
+            Calculation.CalculateNetSellingPrice();
         }       
     }
 }
