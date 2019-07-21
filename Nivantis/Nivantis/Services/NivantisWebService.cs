@@ -47,13 +47,13 @@ namespace Nivantis.Services
             return null;
         }
 
-        public async Task<List<Form>> GetForms(string key)
+        public async Task<List<Formulaire>> GetForms(string key)
         {
             var response = await _httpClient.GetStringAsync($"getFormat.php?key={key}");
 
             if (!string.IsNullOrEmpty(response))
             {
-                var forms = JsonConvert.DeserializeObject<List<Form>>(response);
+                var forms = JsonConvert.DeserializeObject<List<Formulaire>>(response);
                 return forms;
             }
             return null;            

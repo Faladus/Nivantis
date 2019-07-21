@@ -8,9 +8,9 @@ namespace Nivantis.ViewModels
     public class FormViewModel
     {
         public string Title { get; set; }
-        public List<Form> Forms { get; set; }
+        public List<Formulaire> Forms { get; set; }
 
-        public FormViewModel(List<Form> forms)
+        public FormViewModel(List<Formulaire> forms)
         {
             Title = "Formulaires";
             Forms = forms;

@@ -25,6 +25,6 @@ namespace Nivantis.Internal
         }
 
         public User User { get; set; }
-        public List<Form> Forms { get; set; }
+        public List<Formulaire> Forms { get; set; }
     }
 }

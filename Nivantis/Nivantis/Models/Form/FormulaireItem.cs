@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Nivantis.Models.Form
 {
-    public class FormItem
+    public class FormulaireItem
     {        
         [JsonProperty("input")]
         public string[] Inputs { get; set; }
