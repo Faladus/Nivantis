@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nivantis.Views.NewPharmacyPage">
+             x:Class="Nivantis.Views.SearchPharmacyPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label>Choisissez une ville : </Label>
+            <Entry x:Name="CitySearch"></Entry>
+            <Button Clicked="Button_Clicked" Text="Rechercher"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

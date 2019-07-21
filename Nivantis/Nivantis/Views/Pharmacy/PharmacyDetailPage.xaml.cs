@@ -20,7 +20,32 @@ namespace Nivantis.Views
 		{
 			InitializeComponent ();
 
+            DisplayMedicamentsIfNotNull(viewModel.Pharmacy.PurchasedMedicaments);
+
+            DisplayTrainingIfNotNull(viewModel.Pharmacy.TrainingCourses);
+
             BindingContext = this.viewModel = viewModel;
+        }
+
+        private void DisplayMedicamentsIfNotNull(List<Medicament> medicaments)
+        {
+            if (medicaments.Count > 0 && medicaments != null)
+            {
+                MedicamentLabel.IsVisible = true;
+                MedicamentList.ItemsSource = medicaments;
+                MedicamentList.IsVisible = true;
+                
+            }
+        }
+
+        private void DisplayTrainingIfNotNull(List<TrainingCourse> trainingCourses)
+        {
+            if (trainingCourses.Count > 0 && trainingCourses != null)
+            {
+                TrainingCourseLabel.IsVisible = true;
+                TrainingCourseList.ItemsSource = trainingCourses;
+                TrainingCourseList.IsVisible = true;
+            }
         }
 
         public PharmacyDetailPage()

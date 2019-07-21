@@ -11,8 +11,7 @@ namespace Nivantis.ViewModels
         public PharmacyDetailViewModel(Pharmacy pharmacy = null)
         {
             Title = pharmacy?.Name;
-            Pharmacy = pharmacy;
-            
+            Pharmacy = pharmacy;            
         }
     }
 }

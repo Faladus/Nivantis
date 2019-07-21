@@ -16,10 +16,11 @@ namespace Nivantis.Views
 	{
         PharmacyViewModel viewModel;
 
-        public PharmacyPage ()
+        public PharmacyPage(PharmacyViewModel pharmacyViewModel)
 		{
 			InitializeComponent ();
-            BindingContext = viewModel = new PharmacyViewModel();
+
+            BindingContext = viewModel = pharmacyViewModel;
         } 
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -33,18 +34,13 @@ namespace Nivantis.Views
             // Manually deselect item.
             PharmacyList.SelectedItem = null;
         }
+        
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
 
-        private async void AddPharmacy_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewPharmacyPage()));
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Pharmacies.Count == 0)
-                viewModel.LoadPharmaciesCommand.Execute(null);
-        }        
+        //    if (viewModel.Pharmacies.Count == 0)
+        //        viewModel.LoadPharmaciesCommand.Execute(null);
+        //}
     }
 }

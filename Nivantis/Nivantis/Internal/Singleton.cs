@@ -1,4 +1,5 @@
 ﻿using Nivantis.Models;
+using Nivantis.Models.Form;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,5 +25,6 @@ namespace Nivantis.Internal
         }
 
         public User User { get; set; }
+        public List<Formulaire> Forms { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace Nivantis.Views
                 if (user != null)
                 {
                     Singleton.Instance().User = user;
+                    Singleton.Instance().Forms = await nivantisWebService.GetForms(user.Key);
                     await Navigation.PushModalAsync(new MainPage());
                 }
                 else

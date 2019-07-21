@@ -3,17 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nivantis.Views.PharmacyDetailPage">
     <ContentPage.Content>
-        <ScrollView>            
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="20, 0">                
                 <Label Text="{Binding Pharmacy.Name}" FontSize="Large"/>
                 <StackLayout Orientation="Horizontal">
+                    <Label Text="Ville : " TextColor="Blue" FontSize="Small"></Label>
                     <Label Text="{Binding Pharmacy.City}" FontSize="Small"/>
+                    <Label Text="Code postale : " TextColor="Blue" FontSize="Small"></Label>
                     <Label Text="{Binding Pharmacy.PostalCode}" FontSize="Small"/>
-                </StackLayout>
+                </StackLayout>            
+                <Label Text="Adresse : " TextColor="Blue" FontSize="Small"></Label>
                 <Label Text="{Binding Pharmacy.Address}" FontSize="Small"/>
-                <Label Text="{Binding Pharmacy.Phone}" FontSize="Small"/>
-                <Label Text="{Binding Pharmacy.Website}" FontSize="Small"/>                
+                <Label x:Name="MedicamentLabel" IsVisible="False" Text="Médicaments achetés : " TextColor="Blue" FontSize="Small"></Label>
+                <ListView x:Name="MedicamentList"                                          
+                        IsVisible="False"
+                        IsEnabled="False"
+                        HasUnevenRows="false"                
+                        CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nom : " TextColor="Blue" FontSize="Small"></Label>
+                                    <Label Text="{Binding Name}" FontSize="Small"></Label>
+                                    <Label Text="Prix total : " TextColor="Blue" FontSize="Small"></Label>
+                                    <Label Text="{Binding Price, StringFormat=' {0} €'}" FontSize="Small"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label x:Name="TrainingCourseLabel" IsVisible="False" Text="Formations : " TextColor="Blue" FontSize="Small"></Label>
+                <ListView x:Name="TrainingCourseList"                        
+                        IsVisible="False"
+                        IsEnabled="False"
+                        HasUnevenRows="false"                
+                        CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Intitulé : " TextColor="Blue" FontSize="Small"></Label>
+                                    <Label Text="{Binding Title}" FontSize="Small"></Label>
+                                    <Label Text="Date : " TextColor="Blue" FontSize="Small"></Label>
+                                    <Label Text="{Binding UpdateDate}" FontSize="Small"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>                
             </StackLayout>
-        </ScrollView>       
     </ContentPage.Content>
 </ContentPage>
